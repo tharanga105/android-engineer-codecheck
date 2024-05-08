@@ -3,21 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/searchFragment2">
+    app:startDestination="@id/searchFragment">
     <fragment
-        android:id="@+id/searchFragment2"
+        android:id="@+id/searchFragment"
         android:name="jp.co.yumemi.android.code_check.fragment.SearchFragment"
         android:label="SearchFragment" >
         <action
-            android:id="@+id/action_searchFragment2_to_detailFragment2"
-            app:destination="@id/detailFragment2" />
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailFragment2"
+        android:id="@+id/detailFragment"
         android:name="jp.co.yumemi.android.code_check.fragment.DetailFragment"
         android:label="DetailFragment" >
-    <argument
-        android:name="item"
-        app:argType="jp.co.yumemi.android.codeCheck.model.GitHubRepositoryItem" />
-</fragment>
+
+        <argument
+            android:name="item"
+            app:argType="jp.co.yumemi.android.code_check.model.GitHubRepositoryItem" />
+    </fragment>
 </navigation>
