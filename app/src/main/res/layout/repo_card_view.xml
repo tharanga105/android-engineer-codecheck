@@ -19,7 +19,7 @@
             android:id="@+id/tvRepoNameCV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="18dp"
             android:text="TextView"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -29,13 +29,14 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivrepoCV"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
 
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/jetbrains" />
+            app:srcCompat="@drawable/jetbrains"
+            android:background="@drawable/image_border"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

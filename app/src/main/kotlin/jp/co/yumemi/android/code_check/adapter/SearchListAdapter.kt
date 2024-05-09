@@ -24,6 +24,12 @@ class SearchListAdapter(
         private val repositoryImageView: ImageView = itemView.findViewById(R.id.ivrepoCV)
         private val repositoryNameView: TextView = itemView.findViewById(R.id.tvRepoNameCV)
 
+
+        init {
+            // Apply border to repositoryImageView
+            repositoryImageView.setBackgroundResource(R.drawable.image_border)
+        }
+
         fun bind(item: GitHubRepositoryItem) {
             // Load image using Glide or Picasso
             Glide.with(itemView)
