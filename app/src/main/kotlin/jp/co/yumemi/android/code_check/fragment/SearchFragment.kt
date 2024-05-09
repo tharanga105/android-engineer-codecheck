@@ -1,3 +1,4 @@
+@file:JvmName("SearchFragmentKt")
 package jp.co.yumemi.android.code_check.fragment
 
 import android.os.Bundle
@@ -19,7 +20,7 @@ import jp.co.yumemi.android.code_check.service.GitHubApi
 import jp.co.yumemi.android.code_check.service.GitHubApiImpl
 import jp.co.yumemi.android.code_check.view_model.SearchViewModel
 
-class SearchFragment : Fragment(R.layout.fragment_detail) {
+class SearchFragment : Fragment(R.layout.fragment_search) {
 
     private val viewModel: SearchViewModel by viewModels {
         val client = HttpClient(Android)
@@ -68,8 +69,7 @@ class SearchFragment : Fragment(R.layout.fragment_detail) {
 
     private fun gotoRepositoryFragment(item: GitHubRepositoryItem) {
         val action = SearchFragmentDirections
-            .actionRepositoriesFragmentToRepositoryFragment(item = item)
+            .actionSearchFragmentToDetailFragment(item = item)
         findNavController().navigate(action)
     }
-}
 }
