@@ -3,28 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:textAlignment="textStart">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ownerIconView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_margin="16dp"
+        android:background="@drawable/circle_shape"
+        android:clipToOutline="true"
         android:contentDescription="@null"
-        android:src="@drawable/jetbrains"
+        android:outlineProvider="bounds"
+        android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="240dp" />
+        app:layout_constraintWidth_max="240dp"
+        tools:src="@drawable/jetbrains" />
 
     <TextView
         android:id="@+id/nameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="JetBrains/kotlin"
-        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:textColor="@color/custom_red"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,70 +45,128 @@
 
     <TextView
         android:id="@+id/languageView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Written in Kotlin"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/nameView"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/starsView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
-        android:text="38530 stars"
-        android:textAlignment="textEnd"
-        android:textColor="@color/black"
-        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/centerGuid"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameView" />
 
     <TextView
-        android:id="@+id/watchersView"
-        android:layout_width="0dp"
+        android:id="@+id/starsView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
-        android:text="38530 watchers"
-        android:textAlignment="textEnd"
+        android:layout_marginTop="50dp"
+        android:textAlignment="textStart"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/centerGuid"
-        app:layout_constraintTop_toBottomOf="@id/starsView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/languageView" />
+
+    <TextView
+        android:id="@+id/watchersView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="50dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/starsView" />
 
     <TextView
         android:id="@+id/forksView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
-        android:text="4675 forks"
-        android:textAlignment="textEnd"
+        android:layout_marginTop="50dp"
+        android:textAlignment="viewStart"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/centerGuid"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/watchersView" />
 
     <TextView
         android:id="@+id/openIssuesView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
-        android:text="131 open issues"
-        android:textAlignment="textEnd"
+        android:layout_marginTop="50dp"
+        android:textAlignment="viewStart"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/centerGuid"
-        app:layout_constraintTop_toBottomOf="@id/forksView" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="@id/centerGuid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forksView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="40dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/starsView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/stars_view"
+        app:tint="@color/custom_yellow" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/languageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/language_view" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/watchersView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/watchers_view" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/forksView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/forks_view" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/open_issues_view"
+        app:layout_constraintBottom_toBottomOf="@+id/openIssuesView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
