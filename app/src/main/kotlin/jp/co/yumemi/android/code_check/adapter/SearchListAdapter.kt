@@ -17,6 +17,7 @@ class SearchListAdapter(
 ) : ListAdapter<GitHubRepositoryItem, SearchListAdapter.ViewHolder>(DiffCallback) {
 
     private lateinit var repoName: TextView
+
     class ViewHolder(
         itemView: View,
         private val itemClickListener: OnItemClickListener,
@@ -47,35 +48,16 @@ class SearchListAdapter(
     }
 
 
-
-
-    /*class ViewHolder(
-        private val binding: LayoutItemBinding,
-        private val itemClickListener: OnItemClickListener,
-    ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: GitHubRepositoryItem) {
-            binding.repositoryNameView.run {
-                text = item.fullName
-                setOnClickListener {
-                    itemClickListener.itemClick(item)
-                }
-            }
-        }
-    }*/
-
     interface OnItemClickListener {
         fun itemClick(item: GitHubRepositoryItem)
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.repo_card_view, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.repo_card_view, parent, false)
         return ViewHolder(view, itemClickListener)
     }
 
-    /*override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        //val view = LayoutInflater.from(parent.context).inflate(R.layout.repo_card_view,parent,false)
-        val binding = LayoutItemBinding.inflate(view, parent, false)
-        return ViewHolder(binding, itemClickListener)
-    }*/
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position))

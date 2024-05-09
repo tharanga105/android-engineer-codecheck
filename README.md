@@ -14,10 +14,10 @@
 
 - IDE：Android Studio Giraffe | 2022.3.1 Patch 4
 - Kotlin：1.6.21
-- Java：17
+- Java：11
 - Gradle：8.0
 - minSdk：23
-- targetSdk：31
+- targetSdk：34
 
 ※ ライブラリの利用はオープンソースのものに限ります。
 ※ 環境は適宜更新してください。

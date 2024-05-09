@@ -1,5 +1,6 @@
 package jp.co.yumemi.android.code_check.fragment
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -34,5 +35,16 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             forksView.text = "${item.forksCount} forks"
             openIssuesView.text = "${item.openIssuesCount} open issues"
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        // Set orientation to portrait
+        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Reset orientation to default
+        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
     }
 }
